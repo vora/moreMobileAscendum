@@ -1,8 +1,8 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.CreateOrLoginWithDifferentOptions;
-import com.cantaloupe.moreMobile.page.HomePage;
+import com.cantaloupe.moreMobile.pages.CreateOrLoginWithDifferentOptions;
+import com.cantaloupe.moreMobile.pages.HomePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;

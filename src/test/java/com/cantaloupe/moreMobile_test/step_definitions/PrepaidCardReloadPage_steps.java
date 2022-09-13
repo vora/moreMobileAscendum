@@ -1,15 +1,16 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.AutoReloadCancelPage;
-import com.cantaloupe.moreMobile.page.PrepaidCardDetailPage;
-import com.cantaloupe.moreMobile.page.PrepaidCardReloadPage;
+import com.cantaloupe.moreMobile.pages.AutoReloadCancelPage;
+import com.cantaloupe.moreMobile.pages.PrepaidCardDetailPage;
+import com.cantaloupe.moreMobile.pages.PrepaidCardReloadPage;
 import com.cantaloupe.moreMobile.utils.MoreMobilePropertyHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
 import java.io.IOException;
 
 public class PrepaidCardReloadPage_steps {

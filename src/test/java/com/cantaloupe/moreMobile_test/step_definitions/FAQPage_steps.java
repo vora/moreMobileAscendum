@@ -1,12 +1,13 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.FAQPage;
+import com.cantaloupe.moreMobile.pages.FAQPage;
 import com.cantaloupe.moreMobile.utils.MoreMobilePropertyHelper;
 import io.cucumber.java.en.And;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import java.awt.AWTException;
+
+import java.awt.*;
 import java.io.IOException;
 import java.util.Map;
 

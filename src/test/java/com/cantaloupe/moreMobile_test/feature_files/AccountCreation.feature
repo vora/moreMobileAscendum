@@ -21,6 +21,13 @@ Feature: Account Creation
     Then More "confirm registration page" should load successfully
     And user should see "good news text" and "thanks for registering with more text" on the screen
 
+# @AccountCreation
+#  Scenario: Presence of placeholders in every field
+#    Given user launches the application and navigates to initial create account page
+#    When user enters a valid email and clicks on next button
+#    And user see's the placeholders for all the fields on the screen
+
+
   #@USAT-8668
   @AccountCreation
   Scenario: Login button displays for an existing user
@@ -95,6 +102,8 @@ Feature: Account Creation
       | emailID                  |
       | 123$$#@#234324325@yahoo. |
 #      |                          |
+
+
 
  # @USAT-8693, @USAT-8717
   @AccountCreation
@@ -247,6 +256,7 @@ Feature: Account Creation
       When user sees "sign in header" on the screen
       Then More "signin existingaccount page" should load successfully
       And the fields are blank and the sign in button is in disabled mode
+
 
     @AccountCreation
     Scenario: Verify that the user is able to navigate back to home page from create account page

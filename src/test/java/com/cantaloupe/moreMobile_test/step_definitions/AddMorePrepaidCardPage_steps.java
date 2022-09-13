@@ -1,8 +1,8 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.AddMorePrepaidCardPage;
-import com.cantaloupe.moreMobile.page.DashboardPage;
+import com.cantaloupe.moreMobile.pages.AddMorePrepaidCardPage;
+import com.cantaloupe.moreMobile.pages.DashboardPage;
 import com.cantaloupe.moreMobile.utils.MoreMobilePropertyHelper;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,11 +34,6 @@ public class AddMorePrepaidCardPage_steps {
     private final String getMoreNewPrepaidSecurityNumber = props.getProperty("more_mobile_MoreNewPrepaidSecurityNumber");
     private final String addmoreCardNo = props.getProperty("addmoreCardNo");
     private final String addMoreSecurityNo = props.getProperty("addMoreSecurityNo");
-    private final String more_Mobile_ValidPrepaidCard = props.getProperty("more_Mobile_ValidPrepaidCard");
-    private final String more_Mobile_InvalidSecurityNumber = props.getProperty("more_Mobile_InvalidSecurityNumber");
-    private final String more_Mobile_inValidPrepaidCard = props.getProperty("more_Mobile_inValidPrepaidCard");
-    private final String more_Mobile_ValidSecurityNumber = props.getProperty("more_Mobile_ValidSecurityNumber");
-    private final String more_Mobile_Valid19DigitPrepaidCardNumber = props.getProperty("more_Mobile_Valid19DigitPrepaidCardNumber");
 
 
 
@@ -162,22 +157,5 @@ public class AddMorePrepaidCardPage_steps {
         addMorePrepaidCardPage.enterNumberAndCode(newPrepaidCardNumber, newPrepaidCardSecurityNumber);
         addMorePrepaidCardPage.deleteLineData(new File("src//main//java//com//cantaloupe//moreMobile//files//" + addmoreCardNo));
         addMorePrepaidCardPage.deleteLineData(new File("src//main//java//com//cantaloupe//moreMobile//files//" + addMoreSecurityNo));
-    }
-
-    @When("user enters valid prepaid card and invalid security number")
-    public void invalidSecurityMatchAlertPopUp() {
-        addMorePrepaidCardPage.enterNumberAndCode(more_Mobile_ValidPrepaidCard, more_Mobile_InvalidSecurityNumber);
-    }
-
-    @When("user enters the invalid more card number and security number")
-    public void invalidMoreCardAlertPopUp() {
-        addMorePrepaidCardPage.enterNumberAndCode(more_Mobile_inValidPrepaidCard, more_Mobile_ValidSecurityNumber);
-    }
-
-    @When("user enters a valid 19 digit prepaid card number in respective field")
-    public void enterMoreCardNumber() {
-        if (addMorePrepaidCardPage.regexMoreCardNo(more_Mobile_Valid19DigitPrepaidCardNumber)) {
-            addMorePrepaidCardPage.enterText(more_Mobile_Valid19DigitPrepaidCardNumber, "more card number input field");
-        }
     }
 }

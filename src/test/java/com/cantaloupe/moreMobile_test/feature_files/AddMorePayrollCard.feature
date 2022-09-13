@@ -2,14 +2,22 @@ Feature: Add More Payroll Card
   As a more app user, I want a to add a more payroll card to the app so that I am able to make a transaction
 #  @USAT-7451, @USAT-5914
 
-    @AddMorePayrollCard
+#  @AddMorePayrollCard
+# # @USAT-8881
+#  Scenario: Adding a more payroll card successfully
+#    Given user launches the application and to navigate to add more card payroll page by entering valid email and password
+#    When user enters a valid more payroll card number in respective input fields
+#    And user clicks on the "add more card button"
+#    Then More "added more card success page" should load successfully
+#    And user should see "more card added text" and "more card success text" on the screen
+
+  @AddMorePayrollCard
  # @USAT-8881
   Scenario: Adding a more payroll card successfully
     Given user launches the application and to navigate to add more card payroll page by entering valid email and password
     When user enters a valid more payroll card number in respective input fields
     And user clicks on the "add more card button"
-    Then More "added more card success page" should load successfully
-    And user should see "more card added text" and "more card success text" on the screen
+    Then user should see "more card added text" and "more card success text" on the screen
 
 
   @AddMorePayrollCard
@@ -18,7 +26,7 @@ Feature: Add More Payroll Card
   Scenario: Payroll card cannot be a set as a primary card
     Given user launches the application and to navigate to add more card payroll page by entering valid email and password
     When user enters a valid more payroll card number in respective input fields
-    Then user sees that set as primary card option will not be available for the payroll card
+   Then user sees that set as primary card option will not be available for the payroll card
 
   @AddMorePayrollCard
   #@USAT-8879
@@ -85,9 +93,9 @@ Feature: Add More Payroll Card
       Examples:
         | invalid card number |
         | 6                   |
-        | 65                  |
-        | 6739845             |
-        | 123456789123456789  |
+#        | 65                  |
+#        | 6739845             |
+#        | 123456789123456789  |
 
     @AddMorePayrollCard
     #@USAT-8869
@@ -97,7 +105,20 @@ Feature: Add More Payroll Card
       Examples:
         | invalid card number |
         | dfdsf76565878       |
-        | 2132#@%Tasfdv       |
+#        | 2132#@%Tasfdv       |
+
+#    @AddMorePayrollCard
+#    #@USAT-8869
+#    Scenario Outline: no alphabets or special characters are allowed
+#      When user will be seeing "more card number input field" on the screen
+#      Then user sees that no value is entered after entering alphabets or special characters - "<invalid card number>" in "more card number input field"
+#      And user does a random click on the screen
+#      Then user will be seeing "invalid more card number error" on the screen
+#      Examples:
+#        | invalid card number |
+#        | sdfghkjvbl          |
+##        | @#$%&*%$^           |
+##        | DFGHKJ$%^&          |
 
     @AddMorePayrollCard
    # @USAT-8870
@@ -133,14 +154,48 @@ Feature: Add More Payroll Card
       Examples:
         | invalid security code |
         | 1                     |
-        | 65                    |
-        | 568                   |
+#        | 65                    |
+#        | 568                   |
+
+
+#    @AddMorePayrollCard
+#    Scenario Outline: no alphabets or special characters are allowed for security code field
+#      Given user launches the application and to navigate to add more card payroll page by entering valid email and password
+#      When user enters "<invalid security code>" in the "security code input field"
+#      Then user sees that no value is entered after entering alphabets or special characters - "<invalid security code>" in "security code input field"
+#      And user does a random click on the screen
+#      Then user will be seeing "invalid security code error" on the screen
+#      Examples:
+#        | invalid security code |
+#        | sdfghkjvbl            |
+##        | @#$%&*%$^             |
+##        | DFGHKJ$%^&            |
+
+#    @AddMorePayrollCard
+#    #@USAT-8873
+#    Scenario Outline: only numbers are allowed from aplhanumeric characters for security code
+#      Given user launches the application and to navigate to add more card payroll page by entering valid email and password
+#      When user enters "<invalid card number>" in the "security code input field"
+#      Then user sees that only numbers are entered even though he enters alphanumeric characters for "security code input field"
+#      Examples:
+#        | invalid card number |
+#        | dfdsf76565878       |
+#        | 2132#@%Tasfdv       |
+#        |    |
+
+#    @AddMorePayrollCard
+#    #@USAT-8874
+#    Scenario: error for blank security code input field
+#      Given user launches the application and to navigate to add more card payroll page by entering valid email and password
+#      When user enters "     " in the "security code input field"
+#      And user does a random click on the screen
+#      Then user will be seeing "invalid security code error" on the screen
 
     @AddMorePayrollCard
    # @USAT-8878
     Scenario: Invalid more card security code Alert pop up
       Given user launches the application and to navigate to add more card payroll page by entering valid email and password
-      When user enters valid card and invalid security number
+      When user enters the invalid security as below: "6396213030195155979" and "1234"
       Then user clicks on the "add more card button"
       Then user will be seeing "invalid security match alert pop up" on the screen
 

@@ -12,7 +12,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import java.awt.AWTException;
+
+import java.awt.*;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Map;
@@ -59,15 +60,12 @@ public class MoreMobileCommonSteps {
     private final String getMoreNewPrepaidCardNumber = props.getProperty("more_mobile_MoreNewPrepaidCardNumber");
     private final String getMoreNewPrepaidSecurityNumber = props.getProperty("more_mobile_MoreNewPrepaidSecurityNumber");
     private final String getMorePrepaidCardManualReloadNumber = props.getProperty("more_mobile_PrepaidManualReloadCardNumber");
-    private final String more_Mobile_ServiceNumber = props.getProperty("more_Mobile_ServiceNumber");
-    private final String more_Mobile_ManualReloadCardNumber = props.getProperty("more_Mobile_ManualReloadCardNumber");
-    private final String more_Mobile_ReloadCardSecurityNumber = props.getProperty("more_Mobile_ManualReloadCardSecurityNumber");
-    private final String more_Mobile_ManualReloadCardExpiryMonth = props.getProperty("more_Mobile_ReloadCardExpiryMonth");
-    private final String more_Mobile_ReloadCardExpiryYear = props.getProperty("more_Mobile_ReloadCardExpiryYear");
-    private final String more_Mobile_newPayrollMoreCardNumber = props.getProperty("more_Mobile_newPayrollMoreCardNumber");
-    private final String more_Mobile_invalidSecurityNumber = props.getProperty("more_Mobile_invalidSecurityNumber");
 
-    public MoreMobileCommonSteps() {
+
+
+
+
+    public MoreMobileCommonSteps() throws IOException {
     }
 
     @Given("user launches the application and navigates to Home page")
@@ -92,6 +90,7 @@ public class MoreMobileCommonSteps {
         {
             moreMobilePageShouldLoadSuccessfully("initial create account page");
             currentPage.isElementDisplayed("next button");
+
         }
     }
 
@@ -117,6 +116,7 @@ public class MoreMobileCommonSteps {
     public void userClicksOn() throws IOException {
         navigateToMoreUrl();
         currentPage.clickOn("create account button");
+        //moreMobilePageShouldLoadSuccessfully("different options page");
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         if(currentPage.checkElementIsPresent("continue with email link"))
         {
@@ -136,6 +136,9 @@ public class MoreMobileCommonSteps {
     @Given(" user launches the application and to navigate to initial create account page")
     public void navigateToInitialCreateAccount() throws IOException {
         navigateToCreatePage();
+        //currentPage.clickOn("continue with email link");
+        //moreMobilePageShouldLoadSuccessfully("initial create account page");
+
         if(currentPage.checkElementIsPresent("continue with email link"))
         {
             currentPage.clickOn("continue with email link");
@@ -153,6 +156,7 @@ public class MoreMobileCommonSteps {
         enterValue(getMoreEmail, "email input field");
         Assert.assertTrue(currentPage.waitForElement("login button"));
         currentPage.clickOn("login button");
+        //moreMobilePageShouldLoadSuccessfully("different options page");
         if(currentPage.checkElementIsPresent("continue with email link"))
         {
             moreMobilePageShouldLoadSuccessfully("different options page");
@@ -197,6 +201,7 @@ public class MoreMobileCommonSteps {
         currentPage.enterText(getMoreEmail, "email input field");
         waitForElement("login button");
         currentPage.clickOn("login button");
+        //moreMobilePageShouldLoadSuccessfully("different options page");
         if(currentPage.checkElementIsPresent("continue with email link"))
         {
             currentPage.clickOn("continue with email link");
@@ -212,6 +217,7 @@ public class MoreMobileCommonSteps {
     public void navigateTosignInOptions() throws IOException {
         navigateToMoreUrl();
         currentPage.clickOn("already have an account link");
+        //moreMobilePageShouldLoadSuccessfully("different options page");
         if(currentPage.checkElementIsPresent("continue with email link"))
         {
             moreMobilePageShouldLoadSuccessfully("different options page");
@@ -226,6 +232,9 @@ public class MoreMobileCommonSteps {
     public void navigateToSignInPage() throws IOException {
         navigateToMoreUrl();
         currentPage.clickOn("already have an account link");
+//        moreMobilePageShouldLoadSuccessfully("different options page");
+//        currentPage.clickOn("continue with email link");
+//        moreMobilePageShouldLoadSuccessfully("signin existingaccount page");
         if(currentPage.checkElementIsPresent("continue with email link"))
         {
             moreMobilePageShouldLoadSuccessfully("different options page");
@@ -243,6 +252,14 @@ public class MoreMobileCommonSteps {
         navigateToMoreUrl();
         currentPage.clickOn("already have an account link");
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+//        moreMobilePageShouldLoadSuccessfully("different options page");
+//        currentPage.clickOn("continue with email link");
+//        moreMobilePageShouldLoadSuccessfully("signin existingaccount page");
+//        enterValue(getMoreEmail, "email input field");
+//        enterValue(getMorePassword, "password input field");
+//        currentPage.clickOn("sign in button");
+//        moreMobilePageShouldLoadSuccessfully("dashboard page");
+
         if(currentPage.checkElementIsPresent("continue with email link"))
         {
             moreMobilePageShouldLoadSuccessfully("different options page");
@@ -308,11 +325,13 @@ public class MoreMobileCommonSteps {
         currentPage.checkElementIsPresent("profile link");
     }
 
+
+
     @Given("user launches the application and navigates to dashboard page to verify FAQ by entering valid email and password")
     public void navigateToFAQ() throws IOException {
         navigateToMoreUrl();
         currentPage.clickOn("already have an account link");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         if(currentPage.checkElementIsPresent("continue with email link"))
         {
             moreMobilePageShouldLoadSuccessfully("different options page");
@@ -331,14 +350,16 @@ public class MoreMobileCommonSteps {
             currentPage.clickOn("sign in button");
             moreMobilePageShouldLoadSuccessfully("dashboard page");
         }
+       // loginWithEmailAndPassword(getMoreEmail, getMorePassword);
     }
 
 
-    @Given("user launches the application and to navigate to update profile page by entering valid email and password")
+    @Given("user launches the application and to navigate to upda`  `featureste profile page by entering valid email and password")
     public void navigateToUpdateProfiePage() throws IOException {
         loginWithEmailAndPassword(getMoreUpdateProfileEmail, getMoreUpdateProfilePassword);
         currentPage.clickOn("profile link");
         moreMobilePageShouldLoadSuccessfully("update profile page");
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     }
 
     @Given("user launches the application and to navigate to add more card page by entering valid email and password")
@@ -359,11 +380,14 @@ public class MoreMobileCommonSteps {
     public void navigateToPrepaidCardDetailsPage() throws IOException {
         loginWithEmailAndPassword(getMoreAutoReloadEmail, getMorePassword);
         currentPage.navigationToAddedNewCardImg(getMorePrepaidAutoReloadCardNumber);
+        //currentPage.clickOn("prepaid card button");
         moreMobilePageShouldLoadSuccessfully("prepaid card detail page");
+      //  driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(60));
     }
 
     @Given("user launches the application and to navigate to prepaid card reload page by entering valid email and password")
     public void navigationToPrepaidCardAutoReloadPage() throws IOException {
+//        loginWithEmailAndPassword(getMoreAutoReloadEmail, getMoreAutoReloadPassword);
         navigateToMoreUrl();
         currentPage.clickOn("already have an account link");
         driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(60));
@@ -378,19 +402,23 @@ public class MoreMobileCommonSteps {
             currentPage.clickOn("email input field");
             currentPage.clickOn("sign in button");
             moreMobilePageShouldLoadSuccessfully("dashboard page");
+            //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
             currentPage.navigationToAddedNewCardImg(getMorePrepaidAutoReloadCardNumber);
+            // currentPage.clickOn("prepaid card button");
             moreMobilePageShouldLoadSuccessfully("prepaid card detail page");
             currentPage.clickOn("auto reload label");
             moreMobilePageShouldLoadSuccessfully("prepaid card reload page");
         }
-        else
+            else
         {
             moreMobilePageShouldLoadSuccessfully("signin existingaccount page");
             enterValue(getMoreAutoReloadEmail, "email input field");
             enterValue(getMoreAutoReloadPassword, "password input field");
             currentPage.clickOn("sign in button");
             moreMobilePageShouldLoadSuccessfully("dashboard page");
+            //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
             currentPage.navigationToAddedNewCardImg(getMorePrepaidAutoReloadCardNumber);
+            // currentPage.clickOn("prepaid card button");
             moreMobilePageShouldLoadSuccessfully("prepaid card detail page");
             currentPage.clickOn("auto reload label");
             moreMobilePageShouldLoadSuccessfully("prepaid card reload page");
@@ -400,6 +428,7 @@ public class MoreMobileCommonSteps {
 
     @Given("user launches the application and to navigate to prepaid card manual reload page by entering valid email and password")
     public void navigationToPrepaidCardManualReloadPage() throws IOException {
+//        loginWithEmailAndPassword(getMoreAutoReloadEmail, getMoreAutoReloadPassword);
         navigateToMoreUrl();
         currentPage.clickOn("already have an account link");
 
@@ -413,7 +442,9 @@ public class MoreMobileCommonSteps {
             currentPage.clickOn("email input field");
             currentPage.clickOn("sign in button");
             moreMobilePageShouldLoadSuccessfully("dashboard page");
+            //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
             currentPage.navigationToAddedNewCardImg(getMorePrepaidCardManualReloadNumber);
+            // currentPage.clickOn("prepaid card button");
             moreMobilePageShouldLoadSuccessfully("prepaid card detail page");
             currentPage.clickOn("auto reload label");
             moreMobilePageShouldLoadSuccessfully("prepaid card reload page");
@@ -425,7 +456,9 @@ public class MoreMobileCommonSteps {
             enterValue(getMoreManualReloadPassword, "password input field");
             currentPage.clickOn("sign in button");
             moreMobilePageShouldLoadSuccessfully("dashboard page");
+            //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
             currentPage.navigationToAddedNewCardImg(getMorePrepaidCardManualReloadNumber);
+            // currentPage.clickOn("prepaid card button");
             moreMobilePageShouldLoadSuccessfully("prepaid card detail page");
             currentPage.clickOn("auto reload label");
             moreMobilePageShouldLoadSuccessfully("prepaid card reload page");
@@ -433,13 +466,24 @@ public class MoreMobileCommonSteps {
 
     }
 
+
+//    @Given("user launches the application and to navigate to prepaid card manual reload page by entering valid email and password")
+//    public void navigationToPrepaidCardManualReloadPage() throws IOException {
+//        navigateToPrepaidCardDetailsPage();
+//        currentPage.clickOn("manual reload label");
+//        moreMobilePageShouldLoadSuccessfully("prepaid card manual reload page");
+//    }
+
+
+
     @Given("user launches the application and to navigate to change password page by entering valid email and password")
     public void navigateToChangePasswordPage() throws IOException {
         navigateToUpdateProfiePage();
+//        currentPage.clickOn("profile link");
+//        moreMobilePageShouldLoadSuccessfully("update profile page");
         currentPage.clickOn("password change link");
         moreMobilePageShouldLoadSuccessfully("change password page");
     }
-
     @Given("User launches the application and to navigate to initial forgot password page")
     public void navigateToInitialForgotPasswordPage() throws IOException {
         navigateToSignInPage();
@@ -452,9 +496,27 @@ public class MoreMobileCommonSteps {
         navigateToInitialForgotPasswordPage();
         driver.findElement(By.xpath("//input[@id='id_email']")).sendKeys(email);
     }
+//
+//    @Given("user launches the application and to navigate to sign in page after changing the password through forgot password")
+//    public void navigateToSignInPageThroughForgotPassword() throws IOException {
+//        driver.get(getMoreUrl);
+//        moreMobilePageShouldLoadSuccessfully("home page");
+//        currentPage.clickOn("already have an account link");
+//        if (currentPage.checkElementIsPresent("continue with email link")) {
+//            moreMobilePageShouldLoadSuccessfully("different options page");
+//            currentPage.clickOn("continue with email link");
+//        } else {
+//            moreMobilePageShouldLoadSuccessfully("signin existingaccount page");
+//        }
+//    }
+
+
+    //Manual Change
+
 
     @Given("user launches the application and to navigate to manual or auto reload cancel page by entering valid email and password")
     public void navigationToPrepaidCardReloadPage() throws IOException {
+//        loginWithEmailAndPassword(getMoreAutoReloadEmail, getMoreAutoReloadPassword);
         navigateToMoreUrl();
         currentPage.clickOn("already have an account link");
 
@@ -477,11 +539,11 @@ public class MoreMobileCommonSteps {
             currentPage.clickOn("sign in button");
             moreMobilePageShouldLoadSuccessfully("dashboard page");
         }
-
         currentPage.navigationToAddedNewCardImg(getMorePrepaidCardManualReloadNumber);
+        //currentPage.navigationToAnyCardOnAccount();
+       // currentPage.clickOn("prepaid card button");
         moreMobilePageShouldLoadSuccessfully("prepaid card detail page");
         currentPage.clickOn("manual reload label");
-
         if(currentPage.checkElementIsPresent("credit card number input field"))
         {
             moreMobilePageShouldLoadSuccessfully("prepaid card manual reload page");
@@ -492,6 +554,7 @@ public class MoreMobileCommonSteps {
             currentPage.clickOn("yes proceed button");
             moreMobilePageShouldLoadSuccessfully("prepaid card manual reload page");
         }
+
     }
 
     @Given("user launches the application and navigates to respective page by clicking on {string} and entering valid email and password")
@@ -520,13 +583,21 @@ public class MoreMobileCommonSteps {
         }
     }
 
+
+
+
+
+
+
+    //ManualChange
+
     @When("user clicks on the {string}")
     public void userClicksOn(String elementName) {
         currentPage.clickOn(elementName);
     }
 
     @Then("More {string} should load successfully")
-    public void moreMobilePageShouldLoadSuccessfully(String pageName) {
+    public void moreMobilePageShouldLoadSuccessfully(String pageName) throws IOException {
         MoreMobilePageFactory.setPageName(pageName);
         currentPage = MoreMobilePageFactory.getPageObject();
         Assert.assertTrue(currentPage.isPageLoaded());
@@ -576,10 +647,14 @@ public class MoreMobileCommonSteps {
             Assert.assertTrue(currentPage.checkElementIsPresent("already have an account link"));
             currentPage.clickOn("already have an account link");
         }
+//        else
+//        {
+//            Assert.assertTrue(currentPage.checkElementIsPresent("already have an account link"), "user has navigated to home page");
+//        }
     }
 
     @Then("user sees if he is navigated back to home page from sign in page by clicking - {string} or {string}")
-    public void navigateBackToHomeFromSignIn(String firstLinkName, String secondLinkName) {
+    public void navigateBackToHomeFromSignIn(String firstLinkName, String secondLinkName) throws IOException {
         if(currentPage.checkElementIsPresent(firstLinkName))
         {
             currentPage.clickOn("back home link");
@@ -656,6 +731,7 @@ public class MoreMobileCommonSteps {
     @And("user enters a mobile number and verifies that has no phone number in use error displayed")
     public void verifyPhoneNumberIsUnique() throws AWTException {
         boolean numberInUse = currentPage.checkElementIsPresent("phone number in use error");
+       // driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(60));
         if (currentPage.getWebElement("mobile number tick mark image").isDisplayed()) {
             Assert.assertTrue(currentPage.getWebElement("mobile number tick mark image").isDisplayed(), "Phone number is not unique");
         } else if (numberInUse) {
@@ -666,7 +742,7 @@ public class MoreMobileCommonSteps {
     }
 
     @Then("user enters the existing email in the email input field")
-    public void existingemail() {
+    public void existingemail() throws AWTException {
         boolean isEmailValid = currentPage.verifyRegexEmail(getMoreExistingEmail);
         Assert.assertTrue(isEmailValid, "The entered email is not valid");
     }
@@ -684,13 +760,13 @@ public class MoreMobileCommonSteps {
     }
 
     @When("user enters a valid email and password in respective field")
-    public void enterEmailAndPassword() {
+    public void enterEmailAndPassword() throws IOException, AWTException {
         currentPage.enterText(getMoreEmail, "email input field");
         currentPage.enterText(getMorePassword, "password input field");
     }
 
     @When("user enters a invalid {string} in {string} field")
-    public void enterEmailAndPassword(String invalidEmail, String invalidPassword) {
+    public void enterEmailAndPassword(String invalidEmail, String invalidPassword) throws IOException, AWTException {
         currentPage.enterText(invalidEmail, "email input field");
         currentPage.enterText(invalidPassword, "password input field");
     }
@@ -741,7 +817,7 @@ public class MoreMobileCommonSteps {
     public void extractString() {
         String getString = currentPage.extractString();
         boolean isElementClickable = currentPage.checkElementClickable();
-        Assert.assertEquals(getString, more_Mobile_ServiceNumber);
+        Assert.assertEquals(getString, "1-888-561-4748");
         Assert.assertTrue(isElementClickable, "Th service number is not clickable");
     }
 
@@ -799,15 +875,30 @@ public class MoreMobileCommonSteps {
         }
     }
 
+    //@When("user enters a valid more payroll card number in respective input fields")
+//    @When("user enters a valid existing more payroll card number in respective input fields")
+//    public void payroll_enterNumberAndSecurity() throws AWTException {
+//        currentPage.enterNumberAndCode(getMorePayrollCardNumber, getMorePayrollSecurityNumber);
+//    }
+
+
+
+//
+//    @When("user enters a valid more prepaid card number in respective input fields")
+//    public void enterPrepaidNumberAndSecurity() throws AWTException {
+//        currentPage.enterNumberAndCode(getMoreNewPrepaidCardNumber, getMoreNewPrepaidSecurityNumber);
+//        //currentPage.clickOn("set as primary check box");
+//    }
+
     @When("user enters the invalid more card number as below: {string} and {string}")
-    public void invalidAlertPopUp(String number, String security) {
+    public void invalidAlertPopUp(String number, String security) throws AWTException {
         currentPage.enterText(number, "more card number input field");
         currentPage.enterText(security, "security code input field");
     }
 
-    @When("user enters valid card and invalid security number")
-    public void invalidSecurityMatchAlertPopUp() {
-        currentPage.enterNumberAndCode(more_Mobile_newPayrollMoreCardNumber, more_Mobile_invalidSecurityNumber);
+    @When("user enters the invalid security as below: {string} and {string}")
+    public void invalidSecurityMatchAlertPopUp(String number, String security) throws AWTException {
+        currentPage.enterNumberAndCode(number, security);
     }
 
     @Then("user clicks on the added card - {string}")
@@ -833,14 +924,16 @@ public class MoreMobileCommonSteps {
 
     @Then("user sees the card and the balance as - {string} on dashboard page")
     public void verifyBalanceForNewCard(String balance) {
+        //currentPage.navigationToAddedNewCardImg(getMoreNewPrepaidCardNumber);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         String lastFourdigits = currentPage.extractNumbersOnly(getMoreNewPrepaidCardNumber);
+       // String availableBalance = currentPage.balanceCheck(lastFourdigits);
         String availableBalance = currentPage.balanceCheckForNewlyAddedCard(lastFourdigits);
-        Assert.assertEquals(availableBalance, "$" + balance, "Balance on the card is not as expected");
+       Assert.assertEquals(availableBalance, "$" + balance, "Balance on the card is not as expected");
     }
 
     @When("user enters the already registered more payroll card and security code in respective input fields")
-    public void registeredMoreCard() {
+    public void registeredMoreCard() throws AWTException {
         currentPage.enterNumberAndCode(getMoreRegisteredPayrollCard, getMoreRegisteredPayrollSecurityNumber);
     }
 
@@ -911,6 +1004,8 @@ public class MoreMobileCommonSteps {
         }
     }
 
+
+
     @Then("user sees that the month - {string} will have the following value - {string}")
     public void monthDropdownValue( String targetWebElement, String valueDisplayed) {
         String isCurrentMonthValid = currentPage.readDropdownValueByString(valueDisplayed, targetWebElement);
@@ -923,9 +1018,13 @@ public class MoreMobileCommonSteps {
         Assert.assertEquals(isCurrentMonthValid, getMoreYearDropDownValue,  "Current month displayed in the dropdown is not correct");
     }
 
+
+
     @And("user fills out the remaining feilds on the page and clicks on {string}")
     public void fillRemaingForms_Successflow(String pageName) {
         currentPage.enterText("4761739001010119", "credit card number input field");
+       // currentPage.selectFromDropDownListByContainingText("month dropdown", "March");
+       // currentPage.selectFromDropDownListByVisibleText("year dropdown", "2033");
         currentPage.readDropdownValueByString("March","month dropdown");
         currentPage.readDropdownValueByString("2033", "year dropdown");
         currentPage.enterText("123", "cvv input field");
@@ -949,20 +1048,28 @@ public class MoreMobileCommonSteps {
         Assert.assertFalse(isSignInDisabled, "Sign in button is in enabled mode");
     }
 
+
+    //Made changes
     @And("user verifies if the address field is in non editable mode")
     public void isAddressNonEditable() {
         boolean emailInputNotEditable = currentPage.verifyEmailFieldISEditableOrNot("address input field");
         Assert.assertFalse(emailInputNotEditable, "Address field is in editable");
+       // currentPage.clickOn("back link");
+
+
+//        String actualEmailValue = currentPage.verifyDataEdntered("address input field");
+//        Assert.assertEquals(actualEmailValue, getMoreUserAddress, "The data is not a match with the registered data ");
+
     }
 
     @And("user fills out the remaining feilds on the page and clicks on reload card button")
     public void fillRemaingForms_Successflow_ManualReload() {
         currentPage.clickOn("address check box");
         Assert.assertTrue(currentPage.isElementDisplayed("credit card number input field"));
-        currentPage.enterText(more_Mobile_ManualReloadCardNumber, "credit card number input field");
-        currentPage.selectFromDropDownListByContainingText("month dropdown", more_Mobile_ManualReloadCardExpiryMonth);
-        currentPage.selectFromDropDownListByVisibleText("year dropdown", more_Mobile_ReloadCardExpiryYear);
-        currentPage.enterText(more_Mobile_ReloadCardSecurityNumber, "cvv input field");
+        currentPage.enterText("4761739001010119", "credit card number input field");
+        currentPage.selectFromDropDownListByContainingText("month dropdown", "March");
+        currentPage.selectFromDropDownListByVisibleText("year dropdown", "2033");
+        currentPage.enterText("123", "cvv input field");
         currentPage.clickOn("address check box");
         userClicksOn("reload card button");
         boolean isDoneDisplayed = currentPage.waitForElement("done header");
@@ -989,9 +1096,11 @@ public class MoreMobileCommonSteps {
 
     @When("user checks the address checkbox and enters new data")
     public void enterNewData() {
+        //currentPage.clickOn("address check box");
         currentPage.clickOn("address check box");
         enterValue("Newyork city", "city input field");
     }
+
 
     @When("user sees blank errors are displayed for address section if fields are left blank:")
     public void blankErros(io.cucumber.datatable.DataTable dataTable) throws AWTException {
@@ -1043,8 +1152,8 @@ public class MoreMobileCommonSteps {
         currentPage.enterText(getMoreVisaCVV, "cvv input field");
         String getCC = currentPage.getWebElement("credit card number input field").getAttribute("value");
         String getcvv = currentPage.getWebElement("cvv input field").getAttribute("value");
-        currentPage.selectFromDropDownListByContainingText("month dropdown", more_Mobile_ManualReloadCardExpiryMonth);
-        currentPage.readDropdownValueByString( more_Mobile_ReloadCardExpiryYear, "year dropdown");
+        currentPage.selectFromDropDownListByContainingText("month dropdown", "March");
+        currentPage.readDropdownValueByString( "2033", "year dropdown");
         Assert.assertEquals(getCC, getMoreVisaCC, "The entered cc value is not proper");
         Assert.assertEquals(getcvv, getMoreVisaCVV, "The entered cvv value is not correct");
     }
@@ -1061,7 +1170,7 @@ public class MoreMobileCommonSteps {
                 case "cvvNumber":
                     currentPage.enterText(getMoreVisaCVV, element.getKey() + " input field");
                     break;
-                case "genericStreetAddress":
+               case "genericStreetAddress":
                     currentPage.enterText("NewyorkCity", element.getKey() + " input field");
                     break;
                 case "genericCity":
@@ -1078,50 +1187,11 @@ public class MoreMobileCommonSteps {
     }
 
     @Given("user navigates to create new password page")
-    public void navigateToCreateNewPasswordPage() {
+    public void navigateToCreateNewPasswordPage() throws IOException {
         driver.get(getMorePasswordResetUrl);
         moreMobilePageShouldLoadSuccessfully("create new password page");
     }
 
-    @Given("user launches the application and navigates to manual or auto reload cancel page by entering valid email and password")
-    public void navigationToPrepaidCardReloadPage_AutoOrManual() throws IOException {
-        navigateToMoreUrl();
-        currentPage.clickOn("already have an account link");
-
-        if(currentPage.checkElementIsPresent("continue with email link"))
-        {
-            moreMobilePageShouldLoadSuccessfully("different options page");
-            currentPage.clickOn("continue with email link");
-            moreMobilePageShouldLoadSuccessfully("signin existingaccount page");
-            enterValue(getMoreManualReloadEmail, "email input field");
-            enterValue(getMoreManualReloadPassword, "password input field");
-            currentPage.clickOn("email input field");
-            currentPage.clickOn("sign in button");
-            moreMobilePageShouldLoadSuccessfully("dashboard page");
-        }
-        else
-        {
-            moreMobilePageShouldLoadSuccessfully("signin existingaccount page");
-            enterValue(getMoreManualReloadEmail, "email input field");
-            enterValue(getMoreManualReloadPassword, "password input field");
-            currentPage.clickOn("sign in button");
-            moreMobilePageShouldLoadSuccessfully("dashboard page");
-        }
-        currentPage.navigationToAddedNewCardImg(getMorePrepaidCardManualReloadNumber);
-        moreMobilePageShouldLoadSuccessfully("prepaid card detail page");
-        currentPage.clickOn("manual reload label");
-        if(currentPage.checkElementIsPresent("credit card number input field"))
-        {
-            moreMobilePageShouldLoadSuccessfully("prepaid card manual reload page");
-        }
-        else if(currentPage.checkElementIsPresent("cancel auto reload through manual flow"))
-        {
-            moreMobilePageShouldLoadSuccessfully("auto reload cancel page");
-            currentPage.clickOn("yes proceed button");
-            moreMobilePageShouldLoadSuccessfully("prepaid card manual reload page");
-        }
-
-    }
 
 
     @Then("user sees that the following value - {string} will be displayed in the {string}")
@@ -1149,10 +1219,12 @@ public class MoreMobileCommonSteps {
     }
 
     @When("the toggle button is off")
-    public void verifyToggleStatus() {
+    public void verifyToggleStatus() throws IOException {
         if (currentPage.checkElementIsPresent("toggle button")) {
+           // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
             if (currentPage.getWebElement("toggle button").isEnabled()) {
                 Assert.assertTrue(currentPage.getWebElement("toggle button").isEnabled());
+               // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
                 JavascriptExecutor executor = (JavascriptExecutor) driver;
                 executor.executeScript("arguments[0].click();", currentPage.getWebElement("toggle button"));
                 Assert.assertTrue(currentPage.getWebElement("toggle button").isEnabled());
@@ -1160,6 +1232,8 @@ public class MoreMobileCommonSteps {
                 moreMobilePageShouldLoadSuccessfully("prepaid card detail page");
                 currentPage.clickOn("auto reload label");
                 moreMobilePageShouldLoadSuccessfully("prepaid card reload page");
+
+
             } else {
                 currentPage.clickOn("reload dropdown");
                 Assert.assertTrue(currentPage.getWebElement("visa card number input field").isEnabled());
@@ -1176,7 +1250,8 @@ public class MoreMobileCommonSteps {
 
     @Then("user checks for click to pay toggle button and turns it off")
     public void deactivateTClickToPay() {
-        if(currentPage.checkElementIsPresent("toggle button"))
+
+         if(currentPage.checkElementIsPresent("toggle button"))
         {
             boolean isToggleEnabled = currentPage.toggleButtonStatus();
             Assert.assertTrue(isToggleEnabled, "Toggle button is not in enabled mode to turn it off");
@@ -1185,7 +1260,50 @@ public class MoreMobileCommonSteps {
         }
         else
         {
-            Assert.assertTrue(currentPage.isElementDisplayed("address input field"));
+           Assert.assertTrue(currentPage.isElementDisplayed("address input field"));
         }
     }
+
+    @Given("user launches the application and navigates to manual or auto reload cancel page by entering valid email and password")
+    public void navigationToPrepaidCardReloadPage_AutoOrManual() throws IOException {
+        navigateToMoreUrl();
+        currentPage.clickOn("already have an account link");
+
+        if(currentPage.checkElementIsPresent("continue with email link"))
+        {
+            moreMobilePageShouldLoadSuccessfully("different options page");
+            currentPage.clickOn("continue with email link");
+            moreMobilePageShouldLoadSuccessfully("signin existingaccount page");
+            enterValue(getMoreManualReloadEmail, "email input field");
+            enterValue(getMoreManualReloadPassword, "password input field");
+            currentPage.clickOn("email input field");
+            currentPage.clickOn("sign in button");
+            moreMobilePageShouldLoadSuccessfully("dashboard page");
+        }
+        else
+        {
+            moreMobilePageShouldLoadSuccessfully("signin existingaccount page");
+            enterValue(getMoreManualReloadEmail, "email input field");
+            enterValue(getMoreManualReloadPassword, "password input field");
+            currentPage.clickOn("sign in button");
+            moreMobilePageShouldLoadSuccessfully("dashboard page");
+        }
+        currentPage.navigationToAddedNewCardImg(getMorePrepaidCardManualReloadNumber);
+        //currentPage.navigationToAnyCardOnAccount();
+        // currentPage.clickOn("prepaid card button");
+        moreMobilePageShouldLoadSuccessfully("prepaid card detail page");
+        currentPage.clickOn("manual reload label");
+        if(currentPage.checkElementIsPresent("credit card number input field"))
+        {
+            moreMobilePageShouldLoadSuccessfully("prepaid card manual reload page");
+        }
+        else if(currentPage.checkElementIsPresent("cancel auto reload through manual flow"))
+        {
+            moreMobilePageShouldLoadSuccessfully("auto reload cancel page");
+            currentPage.clickOn("yes proceed button");
+            moreMobilePageShouldLoadSuccessfully("prepaid card manual reload page");
+        }
+
+    }
+
 }

@@ -1,6 +1,6 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
-import com.cantaloupe.moreMobile.page.SignInWithExistingAccountPage;
+import com.cantaloupe.moreMobile.pages.SignInWithExistingAccountPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

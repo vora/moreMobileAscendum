@@ -1,12 +1,13 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.CreateNewPasswordPage;
+import com.cantaloupe.moreMobile.pages.CreateNewPasswordPage;
 import com.cantaloupe.moreMobile.utils.MoreMobilePropertyHelper;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
 import java.io.IOException;
 
 

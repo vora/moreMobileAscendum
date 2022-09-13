@@ -19,3 +19,11 @@ Feature: Terms And Condition
     Given user launches the application and navigates to respective page by clicking on "terms and condition link" and entering valid email and password
     When More "terms and condition page" should load successfully
     And user clicks on back to dashboard button and is able to navigate back to the screen
+
+#  Scenario: Navigate to production website
+#    Given user launches the application and navigates to respective page by clicking on "privacy policy link" and entering valid email and password
+#    When More "privacy policy page" should load successfully
+#    And user verifies if he is able to navigate to appropriate page by clicking on the "sixth link"
+#
+#
+#

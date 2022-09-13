@@ -1,27 +1,27 @@
 package com.cantaloupe.moreMobile;
 
-import com.cantaloupe.moreMobile.page.AddMorePayrollCardPage;
-import com.cantaloupe.moreMobile.page.AddMorePrepaidCardPage;
-import com.cantaloupe.moreMobile.page.AddedMoreCardSuccessPage;
-import com.cantaloupe.moreMobile.page.ChangePasswordPage;
-import com.cantaloupe.moreMobile.page.ConfirmRegistrationPage;
-import com.cantaloupe.moreMobile.page.CreateAccountPage;
-import com.cantaloupe.moreMobile.page.CreateNewPasswordPage;
-import com.cantaloupe.moreMobile.page.CreateOrLoginWithDifferentOptions;
-import com.cantaloupe.moreMobile.page.DashboardPage;
-import com.cantaloupe.moreMobile.page.FAQPage;
-import com.cantaloupe.moreMobile.page.ForgotPasswordMessagePage;
-import com.cantaloupe.moreMobile.page.ForgotPasswordPage;
-import com.cantaloupe.moreMobile.page.HomePage;
-import com.cantaloupe.moreMobile.page.InitialCreateAccountPage;
-import com.cantaloupe.moreMobile.page.PayrollCardDeductPage;
-import com.cantaloupe.moreMobile.page.PrepaidCardDetailPage;
-import com.cantaloupe.moreMobile.page.PrepaidCardManualReloadPage;
-import com.cantaloupe.moreMobile.page.PrepaidCardReloadPage;
-import com.cantaloupe.moreMobile.page.PrivacyPolicyPage;
-import com.cantaloupe.moreMobile.page.SignInWithExistingAccountPage;
-import com.cantaloupe.moreMobile.page.TermsAndConditionPage;
-import com.cantaloupe.moreMobile.page.UpdateProfilePage;
+import com.cantaloupe.moreMobile.pages.AddMorePayrollCardPage;
+import com.cantaloupe.moreMobile.pages.AddMorePrepaidCardPage;
+import com.cantaloupe.moreMobile.pages.AddedMoreCardSuccessPage;
+import com.cantaloupe.moreMobile.pages.ChangePasswordPage;
+import com.cantaloupe.moreMobile.pages.ConfirmRegistrationPage;
+import com.cantaloupe.moreMobile.pages.CreateAccountPage;
+import com.cantaloupe.moreMobile.pages.CreateNewPasswordPage;
+import com.cantaloupe.moreMobile.pages.CreateOrLoginWithDifferentOptions;
+import com.cantaloupe.moreMobile.pages.DashboardPage;
+import com.cantaloupe.moreMobile.pages.FAQPage;
+import com.cantaloupe.moreMobile.pages.ForgotPasswordMessagePage;
+import com.cantaloupe.moreMobile.pages.ForgotPasswordPage;
+import com.cantaloupe.moreMobile.pages.HomePage;
+import com.cantaloupe.moreMobile.pages.InitialCreateAccountPage;
+import com.cantaloupe.moreMobile.pages.PayrollCardDeductPage;
+import com.cantaloupe.moreMobile.pages.PrepaidCardDetailPage;
+import com.cantaloupe.moreMobile.pages.PrepaidCardManualReloadPage;
+import com.cantaloupe.moreMobile.pages.PrepaidCardReloadPage;
+import com.cantaloupe.moreMobile.pages.PrivacyPolicyPage;
+import com.cantaloupe.moreMobile.pages.SignInWithExistingAccountPage;
+import com.cantaloupe.moreMobile.pages.TermsAndConditionPage;
+import com.cantaloupe.moreMobile.pages.UpdateProfilePage;
 
 public class MoreMobilePageFactory {
 

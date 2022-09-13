@@ -1,11 +1,12 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.ForgotPasswordPage;
+import com.cantaloupe.moreMobile.pages.ForgotPasswordPage;
 import com.cantaloupe.moreMobile.utils.MoreMobilePropertyHelper;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
 import java.awt.*;
 import java.io.IOException;
 
@@ -40,4 +41,11 @@ public class ForgotPassword_steps {
         boolean isErrorDisplayed = forgotPasswordPage.ErrorMessageForPasswordAndConfirmPassword(wrongPasswordOrConfirmPassword);
         Assert.assertTrue(isErrorDisplayed);
     }
+
+
+
+
+
+
+
 }

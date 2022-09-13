@@ -1,14 +1,16 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.CreateAccountPage;
+import com.cantaloupe.moreMobile.pages.CreateAccountPage;
+import com.cantaloupe.moreMobile.pages.HomePage;
 import com.cantaloupe.moreMobile.utils.MoreMobilePropertyHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import java.awt.AWTException;
+
+import java.awt.*;
 import java.io.IOException;
 import java.util.Map;
 
@@ -17,6 +19,7 @@ public class CreateAccount_steps {
 
     private final WebDriver driver = MoreMobileWebDriverController.getWebDriver();
     CreateAccountPage createAccountPage = new CreateAccountPage();
+    HomePage homePage = new HomePage();
 
     private MoreMobilePropertyHelper props = new MoreMobilePropertyHelper();
     private final String getMoreEmail = props.getProperty("more_mobile_Email");
@@ -62,14 +65,14 @@ public class CreateAccount_steps {
 
     @Then("user sees if {string} error for {string} on entering {string} in {string}")
     public void verifyBlankErrorForEmail1(String expectedErrorMessage, String targetWebElement, String wrongEmail, String emailInputfield) {
-        enterText(wrongEmail, emailInputfield);
+        createAccountPage.enterText(wrongEmail, emailInputfield);
         String actualErrorMessage = createAccountPage.validateErrorMessages(targetWebElement);
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage, "Error messages are not matching");
     }
 
     @Then("user sees if blank email error is displayed on entering a wrong {string}")
     public void verifyBlankErrorForEmail(String wrongEmail) {
-        enterText(wrongEmail, "email input field");
+        createAccountPage.enterText(wrongEmail, "email input field");
         String actualErrorMessage = createAccountPage.validateErrorMessages("blank email error");
         Assert.assertEquals(actualErrorMessage, "Please enter a valid email address.", "The email error message is not displaying on the screen");
     }
@@ -135,10 +138,10 @@ public class CreateAccount_steps {
         Assert.assertTrue(isValidEntry, "Firstname is not valid");
     }
 
-    @When("user enters {string} in {string}")
-    public void enterText(String enterValue, String targetWEbElement) {
-        createAccountPage.sendText(enterValue, targetWEbElement);
-    }
+//    @When("user enters {string} in {string}")
+//    public void enterText(String enterValue, String targetWEbElement) {
+//        createAccountPage.enterText(enterValue, targetWEbElement);
+//    }
 
     @And("user tries to verify {string} is a valid entry or not by using regexLastname expression")
     public void regexLastname(String enterValue) {

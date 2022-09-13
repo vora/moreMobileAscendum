@@ -1,7 +1,7 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.ChangePasswordPage;
+import com.cantaloupe.moreMobile.pages.ChangePasswordPage;
 import com.cantaloupe.moreMobile.utils.MoreMobilePropertyHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;

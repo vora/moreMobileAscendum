@@ -1,7 +1,7 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.AddMorePayrollCardPage;
+import com.cantaloupe.moreMobile.pages.AddMorePayrollCardPage;
 import com.cantaloupe.moreMobile.utils.MoreMobilePropertyHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -73,4 +73,7 @@ public class AddMorePayrollCardPage_steps {
         addMorePayrollCardPage.deleteLineData(new File("src//main//java//com//cantaloupe//moreMobile//files//" + addmorePayrollCardNo));
         addMorePayrollCardPage.deleteLineData(new File("src//main//java//com//cantaloupe//moreMobile//files//" + addMorePayrollSecurityNo));
     }
+
+
+
 }

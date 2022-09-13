@@ -1,15 +1,16 @@
 package com.cantaloupe.moreMobile_test.step_definitions;
 
 import com.cantaloupe.moreMobile.MoreMobileWebDriverController;
-import com.cantaloupe.moreMobile.page.CreateAccountPage;
-import com.cantaloupe.moreMobile.page.UpdateProfilePage;
+import com.cantaloupe.moreMobile.pages.CreateAccountPage;
+import com.cantaloupe.moreMobile.pages.UpdateProfilePage;
 import com.cantaloupe.moreMobile.utils.MoreMobilePropertyHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import java.awt.AWTException;
+
+import java.awt.*;
 import java.io.IOException;
 import java.util.Map;
 
@@ -25,6 +26,8 @@ public class UpdateProfile_steps {
     private final String getMorePassword = props.getProperty("more_mobile_Password");
     private final String getMoreUpdateProfileEmail = props.getProperty("more_mobile_UpdateProfileEmail");
     private final String getMoreUpdateProfilePassword = props.getProperty("more_mobile_UpdateProfilePassword");
+
+
 
     public UpdateProfile_steps() throws IOException {
     }
@@ -45,6 +48,7 @@ public class UpdateProfile_steps {
     @When("user updates the mobile field for {string} in {string}")
     public void updateMobileField(String newMobileNumber, String targetWebElement) throws AWTException, IOException {
         updateProfilePage.clickBackSpaceForMobile(targetWebElement);
+        //updateProfilePage.verifyDetailsFieldsAndErrorsDisplayed("mobile number input field", "mobile number clear icon", "mobile number error");
         updateProfilePage.clearFieldAndEnterData("mobile number input field", " ");
         updateProfilePage.clickOn(targetWebElement);
         updateProfilePage.clickOn("mobile clear icon");
@@ -53,7 +57,9 @@ public class UpdateProfile_steps {
 
     @Then("user confirms the update has been a success by clicking on update button")
     public void clickUpdateProfileButton() throws AWTException {
+        // String actualConfirmationTextValue = updateProfilePage.clickUpdateProfileButton();
         updateProfilePage.clickOn("update button");
+        //String expectedConfirmationTextValue = "Your profile has been updated.";
         boolean profileUpdateStatus = updateProfilePage.waitForElement("profile update success alert");
         Assert.assertTrue(profileUpdateStatus, "Update has not been successfull");
     }
@@ -88,15 +94,21 @@ public class UpdateProfile_steps {
         Map<String, String> dataMap = dataTable.asMap(String.class, String.class);
         for (Map.Entry<String, String> element : dataMap.entrySet()) {
 
+
+
             switch (element.getValue()) {
                 case "genericFirstName":
+                   // String updateProfileFirstName = updateProfilePage.getTextForInput("first name input field");
                     updateProfilePage.clickOn(element.getKey().toLowerCase() + " input field");
                     updateProfilePage.clearData(element.getKey().toLowerCase() + " input field");
                     updateProfilePage.clearFieldAndEnterData( element.getKey().toLowerCase() + " input field", "3");
+                    //updateProfilePage.clickOn("first name clear icon");
+                   // updateProfilePage.deleteCharacters(updateProfileFirstName);
                     updateProfilePage.enterText("TestFirstName" + String.valueOf(updateProfilePage.randomString(2)), element.getKey() + " input field");
                     break;
                 case "genericLastName":
                     updateProfilePage.clickOn(element.getKey().toLowerCase() + " input field");
+                    //updateProfilePage.clickOn("last name clear icon");
                     updateProfilePage.clearFieldAndEnterData( element.getKey().toLowerCase() + " input field", "3");
                     updateProfilePage.enterText("TestLastName" + String.valueOf(updateProfilePage.randomString(2)), element.getKey() + " input field");
                     break;
@@ -106,25 +118,30 @@ public class UpdateProfile_steps {
                     updateProfilePage.clickOn(element.getKey().toLowerCase() + " input field");
                     updateProfilePage.clearInputfieldAndEnterNewData(element.getKey().toLowerCase() + " input field", "2");
                     updateProfilePage.clearFieldAndEnterData( element.getKey().toLowerCase() + " input field", "3");
+                   // updateProfilePage.clickOn("mobile number clear icon");
                     updateProfilePage.enterText(String.valueOf(updateProfilePage.generateRandomNumberString()), element.getKey() + " input field");
                     break;
                 case "genericStreetAddress":
                     updateProfilePage.clickOn(element.getKey().toLowerCase() + " input field");
+                    //updateProfilePage.clickOn("street address clear icon");
                     updateProfilePage.clearFieldAndEnterData( element.getKey().toLowerCase() + " input field", "3");
                     updateProfilePage.enterText("NewyorkCityMason", element.getKey() + " input field");
                     break;
                 case "genericCity":
                     updateProfilePage.clickOn(element.getKey().toLowerCase() + " input field");
+                    //updateProfilePage.clickOn("city clear icon");
                     updateProfilePage.clearFieldAndEnterData( element.getKey().toLowerCase() + " input field", "3");
                     updateProfilePage.enterText("TestCity" + String.valueOf(updateProfilePage.randomString(2)), element.getKey() + " input field");
                     break;
                 case "genaricState":
                     updateProfilePage.clickOn(element.getKey().toLowerCase() + " input field");
+                   // updateProfilePage.clickOn("state clear icon");
                     updateProfilePage.clearFieldAndEnterData( element.getKey().toLowerCase() + " input field", "3");
                     updateProfilePage.enterText(String.valueOf(updateProfilePage.randomState()), element.getKey() + " input field");
                     break;
                 case "genericZipcode":
                     updateProfilePage.clickOn(element.getKey().toLowerCase() + " input field");
+                    //updateProfilePage.clickOn("zipcode clear icon");
                     updateProfilePage.clearFieldAndEnterData( element.getKey().toLowerCase() + " input field", "3");
                     updateProfilePage.enterText(String.valueOf(updateProfilePage.generateRandomZipcode()), element.getKey() + " input field");
                     break;
@@ -142,6 +159,10 @@ public class UpdateProfile_steps {
                     updateProfilePage.clearFieldAndEnterData( "first name input field", "");
                     updateProfilePage.clickBackspaceFromKeyboard("first name input field");
                     boolean firstname = updateProfilePage.verifyDetailsFieldsAndErrorsDisplayed("first name input field", "first name clear icon", element.getKey());
+
+
+                   // updateProfilePage.clickOn("last name input field");
+                   // boolean firstname = updateProfilePage.verifyDetailsFieldsAndErrorsDisplayed("first name input field",  element.getKey());
                     Assert.assertTrue(firstname, "Please enter your first name error is not displayed");
                     break;
 
@@ -182,6 +203,7 @@ public class UpdateProfile_steps {
             }
         }
     }
+
 
     @And("user see's if there are any null values on the page")
     public void fieldsWithNullValue(io.cucumber.datatable.DataTable dataTable) throws AWTException {
@@ -227,9 +249,11 @@ public class UpdateProfile_steps {
         }
     }
 
+
     @When("user updates the mobile field with a unique number")
     public void updateMobileWithUniqueNumber() throws AWTException, IOException {
         updateProfilePage.clickBackSpaceForMobile("mobile number input field");
+       // updateProfilePage.verifyDetailsFieldsAndErrorsDisplayed("mobile number input field", "mobile number clear icon", "mobile number error");
         updateProfilePage.clearFieldAndEnterData("mobile number input field", " ");
         updateProfilePage.clickOn("mobile number input field");
         updateProfilePage.clickOn("mobile clear icon");
