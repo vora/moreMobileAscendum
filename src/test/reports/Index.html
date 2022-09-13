@@ -1,0 +1,1073 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Cantaloupe Automation Tests</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Automation Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Aug 2, 2022 12:11:27 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@SmokeTest</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Account Creation</p>
+            <p class="text-sm">
+              <span>12:11:28 PM</span> / <span>00:00:23:984</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Account Creation</h5>
+<span class='badge badge-success'>08.02.2022 12:11:28 PM</span>
+<span class='badge badge-danger'>08.02.2022 12:11:52 PM</span>
+<span class='badge badge-default'>00:00:23:984</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a more app user, I want to create an account using email ID to login to the application</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Successful Registration flow</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToCreatePage()">
+                <span>Given user launches the application and navigates to create account page by entering valid email</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.CreateAccount_steps.user_fills_out_the_update_profile_form_as_below(io.cucumber.datatable.DataTable)">
+                <span>When user fills out the create account form as below:</span>
+      <div><table class='markup-table table '><tr><td>Password</td><td>createPassword</td></tr><tr><td>Confirm Password</td><td>confirmPassword</td></tr><tr><td>Firstname</td><td>genericFirstName</td></tr><tr><td>Lastname</td><td>genericLastName</td></tr><tr><td>Mobile number</td><td>genericMobileNo</td></tr><tr><td>Street address</td><td>genericStreetAddress</td></tr><tr><td>City</td><td>genericCity</td></tr><tr><td>State</td><td>genericState</td></tr><tr><td>Zip/Postal code</td><td>genericZipcode</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.userClicksOn(java.lang.String)">
+                <span>And user clicks on the "complete button"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.moreMobilePageShouldLoadSuccessfully(java.lang.String)">
+                <span>Then More "confirm registration page" should load successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.checkTwoElementISPresentOrNot(java.lang.String,java.lang.String)">
+                <span>And user should see "good news text" and "thanks for registering with more text" on the screen</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>Invalid email error</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Invalid email error</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given user launches the application and navigates to create account options page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user sees "create account header" on the screen</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on the "next button"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user sees if blank email error is displayed on entering a wrong "123$$#@#234324325@yahoo."</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add More Payroll Card</p>
+            <p class="text-sm">
+              <span>12:11:52 PM</span> / <span>00:01:07:710</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Add More Payroll Card</h5>
+<span class='badge badge-success'>08.02.2022 12:11:52 PM</span>
+<span class='badge badge-danger'>08.02.2022 12:13:00 PM</span>
+<span class='badge badge-default'>00:01:07:710</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a more app user, I want a to add a more payroll card to the app so that I am able to make a transaction</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="19"><span class="badge log pass-bg mr-2">Pass</span>Payroll card cannot be a set as a primary card</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToAddMoreCardPayrollPage()">
+                <span>Given user launches the application and to navigate to add more card payroll page by entering valid email and password</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.enterNumberAndSecurity()">
+                <span>When user enters a valid more payroll card number in respective input fields</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.AddMorePayrollCardPage_steps.verifyElementIsDisabled()">
+                <span>Then user sees that set as primary card option will not be available for the payroll card</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add More Prepaid Card</p>
+            <p class="text-sm">
+              <span>12:13:00 PM</span> / <span>00:00:08:621</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Add More Prepaid Card</h5>
+<span class='badge badge-success'>08.02.2022 12:13:00 PM</span>
+<span class='badge badge-danger'>08.02.2022 12:13:08 PM</span>
+<span class='badge badge-default'>00:00:08:621</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a more app user, I want a to add a more prepaid card to the app so that I am able to make a transaction</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="26"><span class="badge log pass-bg mr-2">Pass</span>Already registered more card</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToAddMoreCardPage()">
+                <span>Given user launches the application and to navigate to add more card page by entering valid email and password</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.enterPrepaidNumberAndSecurity()">
+                <span>When user enters a valid more prepaid card number in respective input fields</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.userClicksOn(java.lang.String)">
+                <span>And user clicks on the "add more card button"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.checkElementISPresentOrNot(java.lang.String)">
+                <span>Then user sees "more card registered alert pop up" on the screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.checkElementISPresentOnScreen(java.lang.String)">
+                <span>Then user should see "more card registered alert pop up" on the screen</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="34"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">FAQ</p>
+            <p class="text-sm">
+              <span>12:13:08 PM</span> / <span>00:00:07:059</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">FAQ</h5>
+<span class='badge badge-success'>08.02.2022 12:13:08 PM</span>
+<span class='badge badge-danger'>08.02.2022 12:13:16 PM</span>
+<span class='badge badge-default'>00:00:07:059</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a more app user, I want see if to navigate to the FAQ page to get my queries clarified</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="35"><span class="badge log pass-bg mr-2">Pass</span>Navigation to FAQ screen</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToFAQ()">
+                <span>Given user launches the application and navigates to dashboard page to verify FAQ by entering valid email and password</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.userClicksOn(java.lang.String)">
+                <span>When user clicks on the "faq link"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.moreMobilePageShouldLoadSuccessfully(java.lang.String)">
+                <span>Then More "faq page" should load successfully</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.checkElementISPresentOrNot(java.lang.String)">
+                <span>And user sees "first question" on the screen</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="42"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Forgot Password</p>
+            <p class="text-sm">
+              <span>12:13:16 PM</span> / <span>00:00:13:306</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Forgot Password</h5>
+<span class='badge badge-success'>08.02.2022 12:13:16 PM</span>
+<span class='badge badge-danger'>08.02.2022 12:13:29 PM</span>
+<span class='badge badge-default'>00:00:13:306</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=42</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a more app user, I want to rest my password so that I am able to login with the new updated password</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="43"><span class="badge log pass-bg mr-2">Pass</span>Redundant link functionality</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToCreateNewPasswordPage()">
+                <span>Given user navigates to create new password page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.CreateNewPasswordPage_steps.verifyPasswordMatch(java.lang.String,java.lang.String)">
+                <span>When user enters "Pass@123" and "Pass@123" in password and confirm password fields</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.userClicksOn(java.lang.String)">
+                <span>Then user clicks on the "update password button"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.checkElementISPresentOrNot(java.lang.String)">
+                <span>And user sees "passcode is expired alert pop up" on the screen</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>Login with updated password</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToSignInPage()">
+                <span>Given user launches the application and to navigate to sign in page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.SignInWithExistingAccount_steps.enterEmailAndPassword()">
+                <span>Then user enters a valid email and updated password in respective field</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.moreMobilePageShouldLoadSuccessfully(java.lang.String)">
+                <span>And More "dashboard page" should load successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="56"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Home Page Health Check</p>
+            <p class="text-sm">
+              <span>12:13:29 PM</span> / <span>00:00:05:417</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Home Page Health Check</h5>
+<span class='badge badge-success'>08.02.2022 12:13:29 PM</span>
+<span class='badge badge-danger'>08.02.2022 12:13:34 PM</span>
+<span class='badge badge-default'>00:00:05:417</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=56</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a more app user, I want see if the home page has all the elements after launching the app</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="57"><span class="badge log pass-bg mr-2">Pass</span>Scroll through carousals</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToMoreUrl()">
+                <span>Given user launches the application and navigates to Home page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.checkElementISPresentOrNot(java.lang.String)">
+                <span>When user sees "logo" on the screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.HomePage_steps.carousalsWithHeaders(io.cucumber.datatable.DataTable)">
+                <span>Then user clicks on carousal and see's if the header is displayed accordingly:</span>
+      <div><table class='markup-table table '><tr><td>first carousel</td><td>firstHeader</td></tr><tr><td>second carousel</td><td>secondHeader</td></tr><tr><td>third carousel</td><td>thirdHeader</td></tr><tr><td>fourth carousel</td><td>fourthHeader</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="63"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Sign in Sign out</p>
+            <p class="text-sm">
+              <span>12:13:34 PM</span> / <span>00:00:06:296</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Sign in Sign out</h5>
+<span class='badge badge-success'>08.02.2022 12:13:34 PM</span>
+<span class='badge badge-danger'>08.02.2022 12:13:41 PM</span>
+<span class='badge badge-default'>00:00:06:296</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=63</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a more app user, I want to sign in to the app so that I see my profile
+As a more app user, I want to sign out of the app so that my profile details are not seen</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="64"><span class="badge log pass-bg mr-2">Pass</span>Login with valid email and password</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToDifferentOptions()">
+                <span>Given user launches the application and navigates to sign in screen through different options page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.enterEmailAndPassword()">
+                <span>When user enters a valid email and password in respective field</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.userClicksOn(java.lang.String)">
+                <span>Then user clicks on the "sign in button"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.moreMobilePageShouldLoadSuccessfully(java.lang.String)">
+                <span>And More "dashboard page" should load successfully</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="71"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Update Password</p>
+            <p class="text-sm">
+              <span>12:13:41 PM</span> / <span>00:00:07:588</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Update Password</h5>
+<span class='badge badge-success'>08.02.2022 12:13:41 PM</span>
+<span class='badge badge-danger'>08.02.2022 12:13:48 PM</span>
+<span class='badge badge-default'>00:00:07:588</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=71</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a more app user, I want to update my password so that I am able to login with the new password</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="72"><span class="badge log pass-bg mr-2">Pass</span>Password meets criteria</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToChangePasswordPage()">
+                <span>Given user launches the application and to navigate to change password page by entering valid email and password</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.enterValue(java.lang.String,java.lang.String)">
+                <span>When user enters "Pass@123" in the "password input field"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.checkElementISPresentOrNot(java.lang.String)">
+                <span>Then user sees "password meets criteria" on the screen</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="78"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Update Profile</p>
+            <p class="text-sm">
+              <span>12:13:48 PM</span> / <span>00:01:25:148</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Update Profile</h5>
+<span class='badge badge-success'>08.02.2022 12:13:48 PM</span>
+<span class='badge badge-danger'>08.02.2022 12:15:13 PM</span>
+<span class='badge badge-default'>00:01:25:148</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=78</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> As a more app user, I want to change my account details so that I can keep my account details up-to-date.</div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="79"><span class="badge log pass-bg mr-2">Pass</span>Account details are updated successfully</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToUpdateProfiePage()">
+                <span>Given user launches the application and to navigate to update profile page by entering valid email and password</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.UpdateProfile_steps.user_fills_out_the_update_profile_form_as_below(io.cucumber.datatable.DataTable)">
+                <span>When user fills out the Update Profile form as below:</span>
+      <div><table class='markup-table table '><tr><td>First Name</td><td>genericFirstName</td></tr><tr><td>Last Name</td><td>genericLastName</td></tr><tr><td>Mobile Number</td><td>genericMobileNo</td></tr><tr><td>Street address</td><td>genericStreetAddress</td></tr><tr><td>City</td><td>genericCity</td></tr><tr><td>State</td><td>genaricState</td></tr><tr><td>Zip/Postal code</td><td>genericZipcode</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.UpdateProfile_steps.verifyAnyErrorsDisplayedOnScreen()">
+                <span>And user check if there are any error displayed on the screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.UpdateProfile_steps.clickUpdateProfileButton()">
+                <span>Then user confirms the update has been a success by clicking on update button</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="86"><span class="badge log pass-bg mr-2">Pass</span>Invalid zipcode entry</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.navigateToUpdateProfiePage()">
+                <span>Given user launches the application and to navigate to update profile page by entering valid email and password</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.UpdateProfile_steps.user_fills_out_the_update_profile_form_as_below(io.cucumber.datatable.DataTable)">
+                <span>When user fills out the Update Profile form as below:</span>
+      <div><table class='markup-table table '><tr><td>First Name</td><td>genericFirstName</td></tr><tr><td>Last Name</td><td>genericLastName</td></tr><tr><td>Mobile Number</td><td>genericMobileNo</td></tr><tr><td>Street address</td><td>genericStreetAddress</td></tr><tr><td>City</td><td>genericCity</td></tr><tr><td>State</td><td>genaricState</td></tr></table>
+      </div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.enterValue(java.lang.String,java.lang.String)">
+                <span>And user enters "yghy" in the "zip/postal code input field"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.userClicksOn(java.lang.String)">
+                <span>Then user clicks on the "update button"</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.cantaloupe.moreMobile_test.step_definitions.MoreMobileCommonSteps.checkElementISPresentOrNot(java.lang.String)">
+                <span>And user sees "invalid zipcode error alert pop up" on the screen</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>13</span>
+</span>
+<p class="name">@SmokeTest</p>
+<p class="duration text-sm">13 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@SmokeTest</h4>
+<span status="pass" class='badge log pass-bg'>13 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Successful Registration flow</a>
+<div class="">
+<span class="badge badge-default">Account Creation.Successful Registration flow</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='10'>Invalid email error</a>
+<div class="">
+<span class="badge badge-default">Account Creation.Invalid email error</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='11'>Invalid email error</a>
+<div class="">
+<span class="badge badge-default">Account Creation.Invalid email error</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:52 PM</td>
+<td>
+<a href="#" class="linked" test-id='18' id='19'>Payroll card cannot be a set as a primary card</a>
+<div class="">
+<span class="badge badge-default">Add More Payroll Card.Payroll card cannot be a set as a primary card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='25' id='26'>Already registered more card</a>
+<div class="">
+<span class="badge badge-default">Add More Prepaid Card.Already registered more card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:08 PM</td>
+<td>
+<a href="#" class="linked" test-id='34' id='35'>Navigation to FAQ screen</a>
+<div class="">
+<span class="badge badge-default">FAQ.Navigation to FAQ screen</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:16 PM</td>
+<td>
+<a href="#" class="linked" test-id='42' id='43'>Redundant link functionality</a>
+<div class="">
+<span class="badge badge-default">Forgot Password.Redundant link functionality</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='42' id='50'>Login with updated password</a>
+<div class="">
+<span class="badge badge-default">Forgot Password.Login with updated password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='56' id='57'>Scroll through carousals</a>
+<div class="">
+<span class="badge badge-default">Home Page Health Check.Scroll through carousals</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='63' id='64'>Login with valid email and password</a>
+<div class="">
+<span class="badge badge-default">Sign in Sign out.Login with valid email and password</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='71' id='72'>Password meets criteria</a>
+<div class="">
+<span class="badge badge-default">Update Password.Password meets criteria</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:13:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='78' id='79'>Account details are updated successfully</a>
+<div class="">
+<span class="badge badge-default">Update Profile.Account details are updated successfully</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:15:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='78' id='86'>Invalid zipcode entry</a>
+<div class="">
+<span class="badge badge-default">Update Profile.Invalid zipcode entry</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Aug 2, 2022 12:11:27 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Aug 2, 2022 12:15:13 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>9</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>9</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>12</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'><b>47</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Account Creation":23.984,"Add More Payroll Card":67.71,"Add More Prepaid Card":8.621,"FAQ":7.059,"Forgot Password":13.306,"Home Page Health Check":5.417,"Sign in Sign out":6.296,"Update Password":7.588,"Update Profile":85.148
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@SmokeTest</td>
+<td>13</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 9,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 12,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 47,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
